@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { HomePage, FavoritesPage, ApiDocsPage, ShadcnPage, ExtensionsListPage } from "../features";
-import Layout from "../layout/Layout";
+import { Layout } from "../layout/index";
 
 export default function AppRouter() {
   return (

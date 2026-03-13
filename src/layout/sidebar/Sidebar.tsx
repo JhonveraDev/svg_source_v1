@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import { sidebarLinks } from "../index";
-import { svgsData } from "../../index";
 
 export const Sidebar = () => {
   return (
@@ -29,7 +28,7 @@ export const Sidebar = () => {
 
       <hr className="sidebar__divider" />
 
-      <nav className="sidebar__nav sidebar__nav--categories">
+      {/* <nav className="sidebar__nav sidebar__nav--categories">
         <ul className="sidebar__list">
           {svgsData.map((link) => (
             <li key={link.id} className="sidebar__item">
@@ -44,7 +43,7 @@ export const Sidebar = () => {
             </li>
           ))}
         </ul>
-      </nav>
+      </nav> */}
     </div>
   );
 };

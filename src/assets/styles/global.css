@@ -18,9 +18,12 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
+
 /* ===== Layout ===== */
 .layout__navbar {
-  background-color: purple;
+  width: 100%;
+  max-width: 100%;
+  padding: 11px 0;
 }
 
 .layout__main {
@@ -28,48 +31,125 @@
   grid-template-columns: 220px 1fr;
 }
 
+.layout__outlet {
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
 /* ===== Navbar ===== */
-.navbar__logo {
-  align-items: center;
-  color: var(--color-white);
-  display: flex;
-  flex-direction: row;
-}
-
-.navbar__logo h2 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  letter-spacing: -.025em;
-  margin-left: 0.55rem;
-}
-
 .navbar {
   width: 100%;
   max-width: 100%;
 }
 
 .navbar__icons {
-  background-color: blue;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 15px 0 16px;
 }
 
+.navbar__logo {
+  align-items: center;
+  color: var(--color-neutral-50);
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar__logo:hover {
+  color: var(--color-neutral-300)
+}
+
+.navbar__logo h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -.025em;
+  margin-left: 0.5rem;
+}
+
 .navbar__icon-btn,
 .navbar__search,
 .navbar__logo {
-  background-color: green;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbar__search {
+  gap: 1px;
+}
+
+.navbar__icon-btn {
+  color: var(--color-neutral-50);
+  transition: background-color 150ms ease;
+}
+
+.navbar__icon-btn:hover {
+  background-color: var(--color-neutral-800);
+}
+
+.navbar__cv,
+.navbar__theme,
+.navbar__social,
+.navbar__github,
+.navbar__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .275rem;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.navbar__github {
+  padding-left: 14px;
+  padding-right: 14px;
+  font-weight: 500;
+  gap: 7px;
+}
+
+.navbar__submit {
+  background-color: var(--color-neutral-800);
+  gap: 7.5px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.navbar__submit:hover {
+  background-color: color-mix(in oklab, var(--color-neutral-800) 70%, transparent);
+}
+
+.navbar__submit span {
+  font-weight: 500;
+  font-size: .875rem;
+  color: var(--color-neutral-50);
+}
+
+.navbar__github span {
+  color: var(--color-neutral-400);
+  font-size: .875rem;
+}
+
+.navbar__divider {
+  width: 1px;
+  height: 18px;
+  background-color: var(--color-neutral-700);
+}
+
+.navbar__divider--github {
+  margin: 0 6px 0 12px;
+}
+
+.navbar__divider--submit {
+  margin: 0 8px 0 12px;
 }
 
 /* ===== Sidebar ===== */
 .sidebar__item {
   margin-bottom: 2px;
   margin-left: 0.75rem;
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
 }
 
 .sidebar__link {
@@ -104,5 +184,7 @@
 .sidebar__divider {
   border: none;
   border-top: 1px solid var(--color-neutral-800);
-  margin: 1rem 0.75rem 0.85rem;
+  margin: 0.9rem 0.5rem 0.75rem 0.8rem;
 }
+
+/* ===== Toolbar ===== */

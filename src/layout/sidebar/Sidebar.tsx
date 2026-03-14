@@ -5,7 +5,7 @@ export const Sidebar = () => {
   return (
     <div className="sidebar">
       <nav className="sidebar__nav sidebar__nav--links">
-        <ul className="sidebar__list sidebar__list--links">
+        <ul className="sidebar__list">
           {sidebarLinks.map(({ to, label, icon: Icon }) => (
             <li key={to} className="sidebar__item">
               <NavLink

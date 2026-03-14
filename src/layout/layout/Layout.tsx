@@ -9,7 +9,9 @@ export function Layout() {
       </div>
       <main className="layout__main">
         <Sidebar />
-        <Outlet />
+        <div className="layout__outlet">
+          <Outlet />
+        </div>
       </main>
     </div>
   );

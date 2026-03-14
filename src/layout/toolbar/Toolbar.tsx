@@ -1,5 +1,4 @@
 export const Toolbar = () => {
-
   return (
     <div className="toolbar">
       <input className="toolbar__search"

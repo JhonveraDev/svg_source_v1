@@ -188,3 +188,75 @@
 }
 
 /* ===== Toolbar ===== */
+.toolbar {
+  position: relative;
+}
+
+.toolbar__search {
+  background-color: var(--color-neutral-900);
+  border-color: var(--color-neutral-800);
+  color: var(--color-white);
+  font-size: 1.125rem;
+  padding-left: calc(.25rem * 10);
+  padding-block: calc(.25rem * 1.5);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: .375rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.toolbar svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.toolbar__clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-white);
+  font-weight: 800;
+  font-size: 13.5px;
+}
+
+.toolbar__search:focus {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-neutral-600);
+  outline: none;
+}
+
+.toolbar__search:focus~.toolbar__search-icon {
+  color: var(--color-white);
+}
+
+.toolbar__search::placeholder {
+  color: var(--color-neutral-400);
+}
+
+.layout__main {
+  margin-right: calc(.25rem * 4);
+}
+
+/* ===== SVG Grid ===== */
+.svg__content {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: .375rem;
+  border-color: var(--color-neutral-800);
+  background-color: red;
+  margin-top: 7px;
+  background-color: color-mix(in oklab, var(--color-neutral-900) 40%, transparent);
+}
+
+.svg__data {
+  background-color: color-mix(in oklab, var(--color-neutral-900) 40%, transparent);
+  border-radius: .375rem .375rem 0 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-neutral-800);
+}

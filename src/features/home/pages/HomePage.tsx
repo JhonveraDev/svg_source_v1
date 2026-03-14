@@ -1,5 +1,11 @@
+import { MainGrid } from "../../../shared/"
+
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <>
+      <div className="home">
+        <MainGrid />
+      </div>
+    </>
   )
 }

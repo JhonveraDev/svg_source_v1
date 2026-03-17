@@ -243,20 +243,19 @@
 }
 
 /* ===== SVG Grid ===== */
+.svg__data {
+  background-color: color-mix(in oklab, var(--color-neutral-800) 40%, transparent);
+  border-radius: .375rem .375rem 0 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-neutral-800);
+}
+
 .svg__content {
   border-style: solid;
   border-width: 1px;
   border-radius: .375rem;
   border-color: var(--color-neutral-800);
-  background-color: red;
   margin-top: 7px;
   background-color: color-mix(in oklab, var(--color-neutral-900) 40%, transparent);
-}
-
-.svg__data {
-  background-color: color-mix(in oklab, var(--color-neutral-900) 40%, transparent);
-  border-radius: .375rem .375rem 0 0;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--color-neutral-800);
 }

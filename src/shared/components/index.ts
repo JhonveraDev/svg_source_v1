@@ -2,3 +2,6 @@ export * from './main-grid';
 export * from './favorites-grid';
 export * from './container';
 export * from './logo-modal';
+export * from './logo-card';
+export * from './logo-grid';
+export * from './main-grid';

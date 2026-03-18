@@ -7,7 +7,7 @@ export const SvgContent = ({ count, label, children, emptyMessage }: SvgContentP
       <div className="svg__grid">
         {count === 0 && emptyMessage
           ? <p>{emptyMessage}</p>
-          : <ul>{children}</ul>
+          : <>{children}</>
         }
       </div>
     </div>

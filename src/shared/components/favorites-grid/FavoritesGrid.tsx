@@ -1,29 +1,15 @@
-import { Toolbar } from "../../../layout";
-import { useFavorites, useFilteredLogos, SvgContent, useLogoModal, LogoModal } from "../../index";
+import { useFavorites } from "../../index";
+import { LogoGrid } from "../index";
 
 export const FavoritesGrid = () => {
-  const { favorites, toggleFavorite } = useFavorites();
-  const { query, setQuery, filteredLogos } = useFilteredLogos(favorites);
-  const { selectedLogo, openModal, closeModal } = useLogoModal();
+  const { favorites } = useFavorites();
 
   return (
-    <div className="favorites__grid">
-      <Toolbar query={query} onSearch={setQuery} />
-      <SvgContent count={filteredLogos.length} label="favoritos" emptyMessage="No hay favoritos...">
-        {filteredLogos.map((logo) => (
-          <li key={logo.id}>
-            {logo.title}
-            <button onClick={() => toggleFavorite(logo)} aria-label="Quitar favorito">
-              ★
-            </button>
-            <button onClick={() => openModal(logo)} aria-label="Ver detalles">
-              ℹ
-            </button>
-          </li>
-        ))}
-      </SvgContent>
-
-      {selectedLogo && <LogoModal logo={selectedLogo} onClose={closeModal} />}
-    </div>
+    <LogoGrid
+      logos={favorites}
+      label="favoritos"
+      containerClass="favorites__grid"
+      emptyMessage="No hay favoritos..."
+    />
   );
 };

@@ -1,2 +1,3 @@
-export * from './useSvg'
-export * from './useSvgCategories'
+export * from './useSvg';
+export * from './useSvgCategories';
+export * from './useSearch';

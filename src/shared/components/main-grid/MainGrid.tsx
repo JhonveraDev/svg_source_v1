@@ -1,27 +1,35 @@
-import { Toolbar } from "../../../layout"
-import { useSvgl, fetchLogos } from "../../index";
+import { useState } from "react";
+import { Toolbar } from "../../../layout";
+import { useSvgl } from "../../index";
 
 export const MainGrid = () => {
   const { logos, loading, error } = useSvgl();
+  const [query, setQuery] = useState("");
+
   if (loading) return <p>Cargando...</p>;
   if (error) return <p>Error: {error}</p>;
-  fetchLogos().then(data => console.log(data));
 
+  const filteredLogos = query.trim()
+    ? logos.filter((logo) =>
+        logo.title.toLowerCase().includes(query.toLowerCase())
+      )
+    : logos;
 
   return (
     <div className="main__grid">
-      <Toolbar />
+      
+      <Toolbar query={query} onSearch={setQuery} />
+
       <div className="svg__content">
-        <div className="svg__data">{logos.length} logos</div>
+        <div className="svg__data">{filteredLogos.length} logos</div>
         <div className="svg__grid">
           <ul>
-            {logos.map((logo) => (
+            {filteredLogos.map((logo) => (
               <li key={logo.id}>{logo.title}</li>
             ))}
           </ul>
         </div>
       </div>
-      {/* ESTE DEBERIA SER UN COMPONENTE, REVISAR POSIBILIDADES */}
     </div>
-  )
-}
+  );
+};

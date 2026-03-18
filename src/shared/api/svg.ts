@@ -13,7 +13,7 @@ export async function fetchCategories(): Promise<Category[]> {
 
 export async function fetchLogos(): Promise<Logo[]> {
   if (logosCache) return logosCache;
-  const res = await fetch("https://api.svgl.app");
+  const res = await fetch("https://api.svgl.app?limit=10");
   if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
   logosCache = await res.json();
   return logosCache!;

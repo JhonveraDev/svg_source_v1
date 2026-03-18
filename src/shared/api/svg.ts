@@ -1,15 +1,20 @@
-export interface Logo {
-  id: number;
-  title: string;
-  category: string | string[];
-  route: string | { light: string; dark: string };
-  url: string;
-  brandUrl?: string;
-  wordmark?: string | { light: string; dark: string };
+import type { Logo, Category } from "../index";
+
+let categoriesCache: Category[] | null = null;
+let logosCache: Logo[] | null = null;
+
+export async function fetchCategories(): Promise<Category[]> {
+  if (categoriesCache) return categoriesCache;
+  const res = await fetch("https://api.svgl.app/categories");
+  if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
+  categoriesCache = await res.json();
+  return categoriesCache!;
 }
 
 export async function fetchLogos(): Promise<Logo[]> {
-  const res = await fetch("https://api.svgl.app?limit=10");
+  if (logosCache) return logosCache;
+  const res = await fetch("https://api.svgl.app");
   if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
-  return res.json();
+  logosCache = await res.json();
+  return logosCache!;
 }

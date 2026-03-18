@@ -1,1 +1,2 @@
-export * from '../hooks/useSvg'
+export * from './useSvg'
+export * from './useSvgCategories'

@@ -1,9 +1,10 @@
 import { Toolbar } from "../../../layout";
-import { useFavorites, useFilteredLogos, SvgContent } from "../../index";
+import { useFavorites, useFilteredLogos, SvgContent, useLogoModal, LogoModal } from "../../index";
 
 export const FavoritesGrid = () => {
   const { favorites, toggleFavorite } = useFavorites();
   const { query, setQuery, filteredLogos } = useFilteredLogos(favorites);
+  const { selectedLogo, openModal, closeModal } = useLogoModal();
 
   return (
     <div className="favorites__grid">
@@ -15,9 +16,14 @@ export const FavoritesGrid = () => {
             <button onClick={() => toggleFavorite(logo)} aria-label="Quitar favorito">
               ★
             </button>
+            <button onClick={() => openModal(logo)} aria-label="Ver detalles">
+              ℹ
+            </button>
           </li>
         ))}
       </SvgContent>
+
+      {selectedLogo && <LogoModal logo={selectedLogo} onClose={closeModal} />}
     </div>
   );
 };

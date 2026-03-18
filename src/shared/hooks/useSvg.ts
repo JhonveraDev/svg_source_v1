@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchLogos, type Logo } from "../api/svg";
+import { fetchLogos, type Logo } from "../index";
 
 export function useSvgl() {
   const [logos, setLogos] = useState<Logo[]>([]);

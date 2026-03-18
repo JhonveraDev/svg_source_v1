@@ -1,3 +1,3 @@
 export * from './useSvg';
 export * from './useSvgCategories';
-export * from './useSearch';
+export * from './useFilteredLogos';

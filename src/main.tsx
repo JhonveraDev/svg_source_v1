@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { FavoritesProvider } from './shared';
 import App from './App.tsx';
 
 import "./assets/styles/reset.css";
@@ -7,6 +8,8 @@ import "./assets/styles/global.css";
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <App />
+    <FavoritesProvider>
+      <App />
+    </FavoritesProvider>
   </BrowserRouter>,
 );

@@ -1,5 +1,7 @@
+import { FavoritesGrid } from "../../../shared"
+
 export const FavoritesPage = () => {
   return (
-    <div>FavoritesPage</div>
+    <div><FavoritesGrid /></div>
   )
 }

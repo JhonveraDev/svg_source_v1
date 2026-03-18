@@ -1,5 +1,5 @@
 import { Toolbar } from "../../../layout";
-import { useFavorites, useFilteredLogos } from "../../index";
+import { useFavorites, useFilteredLogos, SvgContent } from "../../index";
 
 export const FavoritesGrid = () => {
   const { favorites, toggleFavorite } = useFavorites();
@@ -8,25 +8,16 @@ export const FavoritesGrid = () => {
   return (
     <div className="favorites__grid">
       <Toolbar query={query} onSearch={setQuery} />
-      {favorites.length === 0 ? (
-        <p>No hay favoritos aún.</p>
-      ) : (
-        <div className="svg__content">
-          <div className="svg__data">{filteredLogos.length} favoritos</div>
-          <div className="svg__grid">
-            <ul>
-              {filteredLogos.map((logo) => (
-                <li key={logo.id}>
-                  {logo.title}
-                  <button onClick={() => toggleFavorite(logo)} aria-label="Quitar favorito">
-                    ★
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
+      <SvgContent count={filteredLogos.length} label="favoritos" emptyMessage="No hay favoritos...">
+        {filteredLogos.map((logo) => (
+          <li key={logo.id}>
+            {logo.title}
+            <button onClick={() => toggleFavorite(logo)} aria-label="Quitar favorito">
+              ★
+            </button>
+          </li>
+        ))}
+      </SvgContent>
     </div>
   );
 };

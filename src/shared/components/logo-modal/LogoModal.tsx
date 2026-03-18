@@ -22,11 +22,21 @@ export const LogoModal = ({ logo, onClose }: LogoModalProps) => {
 
   const wordmarkPreview = wordmarkDark ?? wordmarkLight;
 
-  const handleDownload = (url: string, filename: string) => {
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    a.click();
+  const openTab = (url: string) => window.open(url, "_blank");
+
+  const openTabs = (urls: string[]) => {
+    const html = urls
+      .map((url) => `<img src="${url}" style="max-width:100%;display:block;margin:2rem auto;" />`)
+      .join("");
+
+    const newTab = window.open("", "_blank");
+    newTab?.document.write(`
+      <html>
+        <head><title>${logo.title} variants</title></head>
+        <body style="background:#111;padding:2rem;">${html}</body>
+      </html>
+    `);
+    newTab?.document.close();
   };
 
   return (
@@ -49,23 +59,23 @@ export const LogoModal = ({ logo, onClose }: LogoModalProps) => {
 
           <div className="modal__card">
             <div className="modal__card-preview">
-              <img src={previewRoute} alt={logo.title} /> {/* 👈 */}
+              <img src={previewRoute} alt={logo.title} />
             </div>
             <div className="modal__card-actions">
-              {hasLightDark && (
-                <button className="modal__download-btn" onClick={() => handleDownload(lightRoute, `${logo.title}-light-dark.zip`)}>
+              {hasLightDark && darkRoute && (
+                <button className="modal__download-btn" onClick={() => openTabs([lightRoute, darkRoute])}>
                   <span className="modal__download-icon">↓</span>
                   <span>Light & dark variants</span>
-                  <span className="modal__ext">.zip</span>
+                  <span className="modal__ext">.svg</span>
                 </button>
               )}
-              <button className="modal__download-btn" onClick={() => handleDownload(lightRoute, `${logo.title}-light.svg`)}>
+              <button className="modal__download-btn" onClick={() => openTab(lightRoute)}>
                 <span className="modal__download-icon">↓</span>
                 <span>Only light variant</span>
                 <span className="modal__ext">.svg</span>
               </button>
               {darkRoute && (
-                <button className="modal__download-btn" onClick={() => handleDownload(darkRoute, `${logo.title}-dark.svg`)}>
+                <button className="modal__download-btn" onClick={() => openTab(darkRoute)}>
                   <span className="modal__download-icon">↓</span>
                   <span>Only dark variant</span>
                   <span className="modal__ext">.svg</span>
@@ -77,25 +87,25 @@ export const LogoModal = ({ logo, onClose }: LogoModalProps) => {
           {hasWordmark && wordmarkPreview && (
             <div className="modal__card">
               <div className="modal__card-preview">
-                <img src={wordmarkPreview} alt={`${logo.title} wordmark`} /> {/* 👈 */}
+                <img src={wordmarkPreview} alt={`${logo.title} wordmark`} />
               </div>
               <div className="modal__card-actions">
-                {wordmarkDark && (
-                  <button className="modal__download-btn" onClick={() => handleDownload(wordmarkLight!, `${logo.title}-wordmark-light-dark.zip`)}>
+                {wordmarkLight && wordmarkDark && (
+                  <button className="modal__download-btn" onClick={() => openTabs([wordmarkLight, wordmarkDark])}>
                     <span className="modal__download-icon">↓</span>
                     <span>Light & dark variants</span>
-                    <span className="modal__ext">.zip</span>
+                    <span className="modal__ext">.svg</span>
                   </button>
                 )}
                 {wordmarkLight && (
-                  <button className="modal__download-btn" onClick={() => handleDownload(wordmarkLight, `${logo.title}-wordmark-light.svg`)}>
+                  <button className="modal__download-btn" onClick={() => openTab(wordmarkLight)}>
                     <span className="modal__download-icon">↓</span>
                     <span>Wordmark light variant</span>
                     <span className="modal__ext">.svg</span>
                   </button>
                 )}
                 {wordmarkDark && (
-                  <button className="modal__download-btn" onClick={() => handleDownload(wordmarkDark, `${logo.title}-wordmark-dark.svg`)}>
+                  <button className="modal__download-btn" onClick={() => openTab(wordmarkDark)}>
                     <span className="modal__download-icon">↓</span>
                     <span>Wordmark dark variant</span>
                     <span className="modal__ext">.svg</span>

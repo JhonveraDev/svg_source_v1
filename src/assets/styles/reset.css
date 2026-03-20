@@ -36,6 +36,16 @@ body {
   color: oklch(70.8% 0 0);
 }
 
+html, body {
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* Remove list styles */
 ul,
 ol {

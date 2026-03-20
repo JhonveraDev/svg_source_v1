@@ -29,11 +29,11 @@
 .layout__main {
   display: grid;
   grid-template-columns: 220px 1fr;
+  margin-right: calc(.25rem * 4);
 }
 
 .layout__outlet {
   margin-left: 5px;
-  margin-right: 15px;
 }
 
 /* ===== Navbar ===== */
@@ -238,10 +238,6 @@
   color: var(--color-neutral-400);
 }
 
-.layout__main {
-  margin-right: calc(.25rem * 4);
-}
-
 /* ===== SVG Grid ===== */
 .svg__content {
   border-style: solid;
@@ -258,6 +254,13 @@
   padding-top: 13px;
   padding-bottom: 13px;
   padding-left: 13px;
+  color: var(--color-neutral-50);
+}
+
+.svg__grid {
+  min-height: calc(100vh - 13.72rem);
+  padding-inline: calc(.25rem * 4);
+  margin-block: calc(.25rem * 6);
 }
 
 /* ===== Logo Modal ===== */
@@ -405,7 +408,7 @@
   text-align: center;
   margin: 0;
   padding-top: 0.75rem;
-  border-top: 1px solid #2a2a2a;
+  border-top: 1px solid var(--color-neutral-800); 
   line-height: 1.5;
 }
 
@@ -423,8 +426,13 @@
 }
 
 @keyframes overlay-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes modal-in {
@@ -432,6 +440,7 @@
     opacity: 0;
     transform: scale(0.94) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
@@ -441,20 +450,19 @@
 /* ===== Logo Card ===== */
 .logo-card {
   position: relative;
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 14px;
-  padding: 1.25rem 1rem 1rem;
+  border: 1px solid var(--color-neutral-800);
+  border-radius: .375rem;
+  padding: 1.5958rem 1rem .75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  justify-content: center;
   transition: border-color 0.2s ease, background 0.2s ease;
   cursor: default;
 }
 
 .logo-card:hover {
-  border-color: #3a3a3a;
-  background: #1e1e1e;
+  border-color: var(--color-neutral-800);
+  background-color: color-mix(in oklab, var(--color-neutral-800) 20%, transparent);
 }
 
 .logo-card__favorite {
@@ -464,39 +472,42 @@
   background: transparent;
   border: none;
   font-size: 1.1rem;
-  color: #555;
+  color: var(--color-neutral-400);
   cursor: pointer;
   line-height: 1;
   padding: 0;
   transition: color 0.15s ease, transform 0.15s ease;
 }
 
+.logo-card__brand {
+  position: absolute;
+  top: 0.75rem;
+  right: 2.4rem;
+  color: var(--color-neutral-400)
+}
+
 .logo-card__favorite:hover {
-  color: #e05555;
+  color: red;
   transform: scale(1.15);
 }
 
 .logo-card__favorite--active {
-  color: #e05555;
+  color: red;
 }
 
 .logo-card__preview {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90px;
   cursor: pointer;
 }
 
 .logo-card__preview img {
-  max-width: 72px;
-  max-height: 72px;
+  height: calc(.25rem * 10);
   object-fit: contain;
   transition: transform 0.2s ease;
-}
-
-.logo-card__preview:hover img {
-  transform: scale(1.06);
+  margin-bottom: calc(.25rem * 4);
+  margin-top: calc(.25rem * 1.5);
 }
 
 .logo-card__info {
@@ -504,12 +515,13 @@
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
+  margin-bottom: calc(.25rem * 3);
 }
 
 .logo-card__title {
-  font-size: 0.875rem;
+  font-size: 15px;
   font-weight: 600;
-  color: #e5e5e5;
+  color: var(--color-neutral-50);
   text-align: center;
 }
 
@@ -520,18 +532,20 @@
 }
 
 .logo-card__badge {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: #aaa;
-  background: #2a2a2a;
-  border: 1px solid #333;
+  color: var(--color-neutral-400);
+  border: 1px solid var(--color-neutral-800);
   border-radius: 999px;
-  padding: 0.15rem 0.6rem;
+  padding-block: calc(.25rem * .5);
+  padding-inline: calc(.25rem * 2);
+  font-family: var(--font-mono);
+  line-height: var(--tw-leading, calc(1 / .75));
 }
 
 .logo-card__more {
-  background: #2a2a2a;
-  border: 1px solid #333;
+  background: red;
+  border: 1px solid var(--color-neutral-800); 
   border-radius: 999px;
   color: #888;
   font-size: 0.55rem;
@@ -551,18 +565,17 @@
   display: flex;
   justify-content: center;
   gap: 0.25rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid #2a2a2a;
+  padding-top: 0.1rem;
 }
 
 .logo-card__action {
   background: transparent;
   border: none;
-  color: #666;
+  color: var(--color-neutral-50);
   font-size: 1rem;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: calc(.25rem * 9);
+  height: calc(.25rem * 9);
+  border-radius: .375rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -571,17 +584,16 @@
 }
 
 .logo-card__action:hover {
-  background: #2a2a2a;
-  color: #e5e5e5;
+  background-color: var(--color-neutral-800);
+  color: var(--color-neutral-50);
 }
 
+/* ===== Logo Grid ===== */
 .logo__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: calc(.25rem * 4);
   width: 100%;
-  max-width: 1475px;
+  max-width: 1504px;
   margin: 0 auto;
-  padding-top: 22px;
-  padding-bottom: 22px;
 }

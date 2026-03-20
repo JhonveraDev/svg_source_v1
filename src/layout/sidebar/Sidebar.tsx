@@ -28,7 +28,7 @@ export const Sidebar = () => {
       <hr className="sidebar__divider" />
 
       <nav className="sidebar__nav sidebar__nav--categories">
-        <ul className="sidebar__list">
+        <ul className="sidebar__list sidebar__list--categories">
           {loading && <li className="sidebar__item">Cargando...</li>}
           {error && <li className="sidebar__item">Error: {error}</li>}
           {categories.map(({ category, total }) => (
@@ -36,10 +36,12 @@ export const Sidebar = () => {
               <NavLink
                 to={`/category/${category}`}
                 className={({ isActive }) =>
-                  `sidebar__link ${isActive ? "sidebar__link--active" : ""}`
+                  `sidebar__link sidebar__link--category ${isActive ? "sidebar__link--active" : ""}`
                 }
               >
-                <span className="sidebar__text sidebar__text--category">{category} {total}</span>
+                <div className="sidebar__text sidebar__text--category">
+                  <p className="sidebar__text--category-name">{category}</p>
+                  <span className="sidebar__text--total">{total}</span></div>
               </NavLink>
             </li>
           ))}

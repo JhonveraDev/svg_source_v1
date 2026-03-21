@@ -9,7 +9,7 @@ export default function AppRouter() {
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="favorites" element={<FavoritesPage />} />
-        <Route path="category/:id" element={<HomePage />} />
+        <Route path="category/:category" element={<HomePage />} />
 
         <Route path="docs">
           <Route index element={<Navigate to="api" replace />} />

@@ -7,11 +7,12 @@ interface LogoGridProps {
   label: string;
   containerClass: string;
   emptyMessage?: string;
+  category?: string;
 }
 
-export const LogoGrid = ({ logos, label, containerClass, emptyMessage }: LogoGridProps) => {
+export const LogoGrid = ({ logos, label, containerClass, emptyMessage, category }: LogoGridProps) => {
   const { toggleFavorite, isFavorite } = useFavorites();
-  const { query, setQuery, filteredLogos } = useFilteredLogos(logos);
+  const { query, setQuery, filteredLogos } = useFilteredLogos(logos, category);
   const { selectedLogo, openModal, closeModal } = useLogoModal();
 
   return (

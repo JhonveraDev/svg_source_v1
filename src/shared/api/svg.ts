@@ -7,7 +7,9 @@ export async function fetchCategories(): Promise<Category[]> {
   if (categoriesCache) return categoriesCache;
   const res = await fetch("https://api.svgl.app/categories");
   if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
-  categoriesCache = await res.json();
+  categoriesCache = (await res.json()).sort((a: Category, b: Category) =>
+    a.category.localeCompare(b.category)
+  );
   return categoriesCache!;
 }
 

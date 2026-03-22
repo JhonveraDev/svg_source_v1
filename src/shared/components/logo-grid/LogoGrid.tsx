@@ -17,7 +17,7 @@ export const LogoGrid = ({ logos, label, containerClass, emptyMessage, category 
 
   return (
     <div className={containerClass}>
-      <Toolbar query={query} onSearch={setQuery} />
+      <Toolbar query={query} onSearch={setQuery} label={category} />
       <SvgContent count={filteredLogos.length} label={label} emptyMessage={emptyMessage}>
         <ul className="logo__grid">
           {filteredLogos.map((logo) => (

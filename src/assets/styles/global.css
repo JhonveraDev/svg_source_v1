@@ -583,12 +583,13 @@
 }
 
 .logo__card-favorite:hover {
-  color: red;
+  color: rgb(234, 0, 0);
   transform: scale(1.15);
 }
 
-.logo__card-favorite--active {
-  color: red;
+.logo__card-favorite--active svg {
+  fill: rgb(234, 0, 0);
+  stroke: rgb(234, 0, 0);
 }
 
 .logo__card-preview {

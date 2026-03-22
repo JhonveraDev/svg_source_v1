@@ -330,6 +330,7 @@
   border-color: var(--color-neutral-800);
   margin-top: 9px;
   background-color: color-mix(in oklab, var(--color-neutral-900) 40%, transparent);
+  position: relative;
 }
 
 .svg__data {
@@ -600,8 +601,8 @@
   height: calc(.25rem * 10);
   object-fit: contain;
   transition: transform 0.2s ease;
-  margin-bottom: calc(.25rem * 4);
-  margin-top: calc(.25rem * 1.5);
+  margin-bottom: calc(.175rem * 4);
+  margin-top: calc(.45rem * 1.5);
 }
 
 .logo__card-info {

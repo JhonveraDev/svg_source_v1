@@ -200,7 +200,7 @@
   position: relative;
 }
 
-.sidebar__fade {
+.shadow__fade {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -212,7 +212,7 @@
   transition: opacity 0.3s ease;
 }
 
-.sidebar__fade--hidden {
+.shadow__fade--hidden {
   opacity: 0;
 }
 
@@ -244,7 +244,6 @@
   border-radius: 4px;
   border: 1px solid var(--color-neutral-800);
   font-size: .75rem;
-    /* sombra sutil */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -341,11 +340,18 @@
 }
 
 .svg__grid {
-  min-height: calc(100vh - 13.72rem);
+  height: calc(100vh - 10.74rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--color-neutral-700) 0%, transparent) transparent;
   padding-inline: calc(.25rem * 4);
-  margin-block: calc(.25rem * 6);
+  transition: scrollbar-color 0.3s ease;
 }
 
+.svg__grid:hover {
+  scrollbar-color: var(--color-neutral-700) transparent;
+}
 /* ===== Logo Modal ===== */
 .modal__overlay {
   position: fixed;
@@ -678,6 +684,7 @@
   width: 100%;
   max-width: 1504px;
   margin: 0 auto;
+  margin-block: calc(.25rem * 6);
 }
 
 /* ===== Sidebar ===== */

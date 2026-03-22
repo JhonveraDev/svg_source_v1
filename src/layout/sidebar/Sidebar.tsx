@@ -1,28 +1,10 @@
 import { NavLink } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
 import { sidebarLinks } from "../index";
-import { useSvgCategories } from "../../shared";
+import { useSvgCategories, useScrollBottom } from "../../shared";
 
 export const Sidebar = () => {
   const { categories, loading, error } = useSvgCategories();
-  const navRef = useRef<HTMLElement>(null);
-  const [isAtBottom, setIsAtBottom] = useState(false);
-
-  useEffect(() => {
-    const el = navRef.current;
-    if (!el) return;
-
-    const handleScroll = () => {
-      const threshold = 20;
-      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - threshold;
-      setIsAtBottom(atBottom);
-    };
-
-    handleScroll();
-
-    el.addEventListener("scroll", handleScroll);
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, [categories]);
+  const { ref: navRef, isAtBottom } = useScrollBottom(categories);
 
   return (
     <div className="sidebar">
@@ -71,7 +53,7 @@ export const Sidebar = () => {
             ))}
           </ul>
         </nav>
-        <div className={`sidebar__fade ${isAtBottom ? "sidebar__fade--hidden" : ""}`} />
+        <div className={`shadow__fade ${isAtBottom ? "shadow__fade--hidden" : ""}`} />
       </div>
     </div>
   );

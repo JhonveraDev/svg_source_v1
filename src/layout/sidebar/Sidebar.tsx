@@ -53,7 +53,7 @@ export const Sidebar = () => {
             ))}
           </ul>
         </nav>
-        <div className={`shadow__fade ${isAtBottom ? "shadow__fade--hidden" : ""}`} />
+        <div className={`sidebar__fade ${isAtBottom ? "sidebar__fade--hidden" : ""}`} />
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ export const SvgContent = ({ count, label, children, emptyMessage }: SvgContentP
           : <>{children}</>
         }
       </div>
-      <div className={`shadow__fade ${isAtBottom ? "shadow__fade--hidden" : ""}`} />
+      <div className={`container__fade ${isAtBottom ? "container__fade--hidden" : ""}`} />
     </div>
   );
 };

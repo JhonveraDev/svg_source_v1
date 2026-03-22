@@ -17,7 +17,7 @@ export const Sidebar = () => {
                 className={({ isActive }) =>
                   `sidebar__link ${isActive ? "sidebar__link--active" : ""}`
                 }
-              >
+              > 
                 <Icon />
                 <span className="sidebar__text">{label}</span>
               </NavLink>

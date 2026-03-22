@@ -52,7 +52,7 @@ export const LogoModal = ({ logo, onClose }: LogoModalProps) => {
                 : "Download the SVG for this logo:"}
             </p>
           </div>
-          <button className="modal__close" onClick={onClose} aria-label="Cerrar">✕</button>
+          <button className="modal__close" onClick={onClose} aria-label="Cerrar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide-icon lucide lucide-x"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
         </div>
 
         <div className="modal__cards">
@@ -64,21 +64,21 @@ export const LogoModal = ({ logo, onClose }: LogoModalProps) => {
             <div className="modal__card-actions">
               {hasLightDark && darkRoute && (
                 <button className="modal__download-btn" onClick={() => openTabs([lightRoute, darkRoute])}>
-                  <span className="modal__download-icon">↓</span>
+                  <span className="modal__download-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide-icon lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></span>
                   <span>Light & dark variants</span>
-                  <span className="modal__ext">.svg</span>
+                  <span className="modal__ext">. svg</span>
                 </button>
               )}
               <button className="modal__download-btn" onClick={() => openTab(lightRoute)}>
-                <span className="modal__download-icon">↓</span>
+                <span className="modal__download-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide-icon lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></span>
                 <span>Only light variant</span>
-                <span className="modal__ext">.svg</span>
+                <span className="modal__ext">. svg</span>
               </button>
               {darkRoute && (
                 <button className="modal__download-btn" onClick={() => openTab(darkRoute)}>
-                  <span className="modal__download-icon">↓</span>
+                  <span className="modal__download-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide-icon lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></span>
                   <span>Only dark variant</span>
-                  <span className="modal__ext">.svg</span>
+                  <span className="modal__ext">. svg</span>
                 </button>
               )}
             </div>
@@ -92,23 +92,23 @@ export const LogoModal = ({ logo, onClose }: LogoModalProps) => {
               <div className="modal__card-actions">
                 {wordmarkLight && wordmarkDark && (
                   <button className="modal__download-btn" onClick={() => openTabs([wordmarkLight, wordmarkDark])}>
-                    <span className="modal__download-icon">↓</span>
+                    <span className="modal__download-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide-icon lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></span>
                     <span>Light & dark variants</span>
-                    <span className="modal__ext">.svg</span>
+                    <span className="modal__ext">. svg</span>
                   </button>
                 )}
                 {wordmarkLight && (
                   <button className="modal__download-btn" onClick={() => openTab(wordmarkLight)}>
-                    <span className="modal__download-icon">↓</span>
+                    <span className="modal__download-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide-icon lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></span>
                     <span>Wordmark light variant</span>
-                    <span className="modal__ext">.svg</span>
+                    <span className="modal__ext">. svg</span>
                   </button>
                 )}
                 {wordmarkDark && (
                   <button className="modal__download-btn" onClick={() => openTab(wordmarkDark)}>
-                    <span className="modal__download-icon">↓</span>
+                    <span className="modal__download-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide-icon lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg></span>
                     <span>Wordmark dark variant</span>
-                    <span className="modal__ext">.svg</span>
+                    <span className="modal__ext">. svg</span>
                   </button>
                 )}
               </div>

@@ -662,6 +662,14 @@
   color: var(--color-neutral-50);
 }
 
+.logo__card-preview img {
+  transition: opacity 0.99s ease;
+}
+
+.logo__card-img--fading {
+  opacity: 0;
+}
+
 /* ===== Logo Grid ===== */
 .logo__grid {
   display: grid;

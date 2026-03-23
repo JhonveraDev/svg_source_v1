@@ -6,11 +6,11 @@ export const SvgContent = ({ count, label, children, emptyMessage }: SvgContentP
 
   return (
     <div className="svg__content">
-      <div className="svg__data">{count} {label}</div>
       <div
         ref={gridRef as React.RefObject<HTMLDivElement>}
         className="svg__grid"
       >
+        <div className="svg__data">{count} {label}</div>
         {count === 0 && emptyMessage
           ? <p>{emptyMessage}</p>
           : <>{children}</>

@@ -332,28 +332,30 @@
   margin-top: 9px;
   background-color: color-mix(in oklab, var(--color-neutral-900) 40%, transparent);
   position: relative;
+  overflow: hidden;
 }
 
 .svg__data {
-  background-color: color-mix(in oklab, var(--color-neutral-900) 40%, transparent);
+  background-color: color-mix(in oklab, var(--color-neutral-900) 50%, transparent);
   border-bottom: 1px solid var(--color-neutral-800);
   padding-top: 13px;
   padding-bottom: 13px;
   padding-left: 13px;
   color: var(--color-neutral-50);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  backdrop-filter: blur(12px);
 }
 
 .svg__grid {
-  height: calc(100vh - 10.74rem);
-  overflow-y: auto;
+  width: 100%;
+  height: calc(100vh - 7.5rem);
+  overflow-y: overlay;
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: color-mix(in oklab, var(--color-neutral-700) 0%, transparent) transparent;
-  padding-inline: calc(.25rem * 4);
   transition: scrollbar-color 0.3s ease;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }
 
 .svg__grid:hover {

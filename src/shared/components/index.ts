@@ -5,3 +5,4 @@ export * from './logo-modal';
 export * from './logo-card';
 export * from './logo-grid';
 export * from './main-grid';
+export * from './pagination';

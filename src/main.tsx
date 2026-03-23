@@ -2,14 +2,19 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { FavoritesProvider } from './shared';
 import App from './App.tsx';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "./assets/styles/reset.css";
 import "./assets/styles/global.css";
 
+const queryClient = new QueryClient();
+
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <FavoritesProvider>
-      <App />
-    </FavoritesProvider>
+    <QueryClientProvider client={queryClient}>
+      <FavoritesProvider>
+        <App />
+      </FavoritesProvider>
+    </QueryClientProvider>
   </BrowserRouter>,
 );

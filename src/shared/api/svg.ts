@@ -1,7 +1,8 @@
-import type { Logo, Category } from "../index";
+import type { Category } from "../index";
+import type { Logo } from "../index";
 
-let categoriesCache: Category[] | null = null;
 let logosCache: Logo[] | null = null;
+let categoriesCache: Category[] | null = null;
 
 export async function fetchCategories(): Promise<Category[]> {
   if (categoriesCache) return categoriesCache;
@@ -15,8 +16,11 @@ export async function fetchCategories(): Promise<Category[]> {
 
 export async function fetchLogos(): Promise<Logo[]> {
   if (logosCache) return logosCache;
-  const res = await fetch("https://api.svgl.app?limit=30");
+
+  const res = await fetch("https://api.svgl.app");
+
   if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
+
   logosCache = await res.json();
   return logosCache!;
 }

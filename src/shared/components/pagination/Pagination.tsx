@@ -1,10 +1,4 @@
-interface PaginationProps {
-  page: number;
-  totalItems: number;
-  limit: number;
-  onNext: () => void;
-  onPrev: () => void;
-}
+import type {PaginationProps} from '../../index';
 
 export const Pagination = ({ page, totalItems, limit, onNext, onPrev }: PaginationProps) => (
   <div className="pagination">

@@ -47,7 +47,7 @@ export const LogoGrid = ({ label, containerClass, emptyMessage, category, onlyFa
           ))}
         </ul>
 
-        {!isLoading && (
+        {!isLoading && filteredLogos.length > LIMIT && (
           <Pagination
             page={page}
             totalItems={filteredLogos.length}

@@ -350,6 +350,9 @@
   scrollbar-color: color-mix(in oklab, var(--color-neutral-700) 0%, transparent) transparent;
   padding-inline: calc(.25rem * 4);
   transition: scrollbar-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .svg__grid:hover {
@@ -691,4 +694,31 @@
   margin-block: calc(.25rem * 6);
 }
 
-/* ===== Sidebar ===== */
+/* ===== Pagination ===== */
+.pagination {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.pagination__content {
+  background-color: var(--color-neutral-800);
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: .375rem;
+  border: 1px solid var(--color-neutral-800);
+}
+
+.pagination__content button {
+  color: var(--color-neutral-50);
+}
+
+.pagination__current {
+  color: var(--color-neutral-400);
+}

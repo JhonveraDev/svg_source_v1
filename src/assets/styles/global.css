@@ -351,14 +351,37 @@
 .svg__grid {
   width: 100%;
   height: calc(100vh - 10.7rem);
-  overflow-y: overlay;
+  overflow-y: auto;
   overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-neutral-700) transparent;
-  transition: scrollbar-color 0.3s ease;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 999px;
+    transition: background 0.3s ease;
+  }
+
+  &:hover {
+    scrollbar-color: rgba(150, 150, 150, 0.4) transparent;
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(150, 150, 150, 0.4);
+    }
+  }
 }
 
 /* ===== Logo Modal ===== */
@@ -760,4 +783,47 @@
 
 .pagination__current {
   color: var(--color-neutral-400);
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  color: var(--color-neutral-50);
+  gap: 1.175rem;
+}
+
+.empty-state h2 {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.empty-state p {
+  color: var(--color-neutral-400);
+}
+
+.empty-state__back-to-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  cursor: pointer;
+  background-color: var(--color-neutral-900);
+  border: 1px solid var(--color-neutral-800);
+  padding: 6.5px 14.99px;
+  border-radius: .375rem;
+}
+
+.empty-state__back-to-home:hover {
+  background-color: var(--color-neutral-800);
+}
+
+.empty-state__back-to-home p {
+  font-size: .875rem;
+  color: var(--color-neutral-50);
+  font-weight: 500;
+  margin-left: 7px;
 }

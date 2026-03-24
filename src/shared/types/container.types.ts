@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 export interface SvgContentProps {
   count: number;
   label: string;
-  children: React.ReactNode;
-  emptyMessage?: string;
+  children: ReactNode;
+  emptyMessage?: ReactNode;
 }

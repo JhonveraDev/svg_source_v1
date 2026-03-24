@@ -6,3 +6,4 @@ export * from './logo-card';
 export * from './logo-grid';
 export * from './main-grid';
 export * from './pagination';
+export * from './empty-state';

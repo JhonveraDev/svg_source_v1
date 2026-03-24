@@ -17,6 +17,9 @@ export const Toolbar = ({ query, onSearch, label }: ToolbarProps) => {
         <path d="m21 21-4.34-4.34"></path>
         <circle cx="11" cy="11" r="8"></circle>
       </svg>
+      {query && (
+        <button onClick={() => onSearch("")} className="toolbar__clear">✕</button>
+      )}
     </div>
   );
 };

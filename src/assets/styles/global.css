@@ -354,12 +354,8 @@
   overflow-y: overlay;
   overflow-x: hidden;
   scrollbar-width: thin;
-  scrollbar-color: color-mix(in oklab, var(--color-neutral-700) 0%, transparent) transparent;
-  transition: scrollbar-color 0.3s ease;
-}
-
-.svg__grid:hover {
   scrollbar-color: var(--color-neutral-700) transparent;
+  transition: scrollbar-color 0.3s ease;
 }
 
 /* ===== Logo Modal ===== */
@@ -731,7 +727,7 @@
   width: 100%;
   max-width: 1504px;
   margin: 0 auto;
-  margin-block: calc(.25rem * 6);
+  margin-block: calc(.27rem * 6);
 }
 
 /* ===== Pagination ===== */
@@ -742,6 +738,8 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 1.5rem;
+  position: absolute;
+  bottom: 0;
 }
 
 .pagination__content {

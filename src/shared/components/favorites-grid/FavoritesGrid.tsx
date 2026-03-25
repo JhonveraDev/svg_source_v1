@@ -3,7 +3,7 @@ import { LogoGrid, EmptyState } from "../index";
 export const FavoritesGrid = () => {
   return (
     <LogoGrid
-      label="favoritos"
+      label="Favorites"
       containerClass="favorites__grid"
       emptyMessage={
         <EmptyState

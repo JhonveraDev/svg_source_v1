@@ -346,6 +346,17 @@
   top: 0;
   z-index: 1;
   backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.svg__data--label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11px;
+  font-weight: 500;
 }
 
 .svg__grid {
@@ -767,7 +778,7 @@
 }
 
 .pagination__content {
-  background-color: var(--color-neutral-800);
+  background-color: var(--color-neutral-900);
   padding: 8px 15px;
   display: flex;
   align-items: center;

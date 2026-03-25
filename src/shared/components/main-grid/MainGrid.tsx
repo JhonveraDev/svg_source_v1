@@ -6,7 +6,7 @@ export const MainGrid = () => {
 
   return (
     <LogoGrid
-      label={category ?? "logos"}
+      label={category ?? "SVG's"}
       containerClass="main__grid"
       category={category}
       emptyMessage={

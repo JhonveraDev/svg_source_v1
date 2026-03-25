@@ -838,3 +838,75 @@
   font-weight: 500;
   margin-left: 7px;
 }
+
+/* ===== Standar Grid ===== */
+.api__grid {
+  width: 100%;
+  height: calc(100vh - 8.1rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 999px;
+    transition: background 0.3s ease;
+  }
+
+  &:hover {
+    scrollbar-color: rgba(150, 150, 150, 0.4) transparent;
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(150, 150, 150, 0.4);
+    }
+  }
+}
+
+/* ===== API Reference ===== */
+.api-docs__content {
+  display: grid;
+  grid-template-columns: 1fr 242px;
+}
+
+.api-docs__main {
+  margin: 0 auto;
+  max-width: 768px;
+  width: 100%;
+}
+
+.api-docs__sidebar {
+}
+
+.api-docs__nav {
+  position: sticky;
+  top: 0;
+  margin-top: 2rem;
+}
+
+.api-docs__main {
+  color: var(--color-neutral-50);
+}
+
+.api-docs__main h2 {
+  font-weight: 600;
+  font-size: 24px;
+  margin: 32px 0 20px;
+}
+
+.api-docs__main h3 {
+  font-size: 16px;
+  margin: 30px 0 12px;
+}

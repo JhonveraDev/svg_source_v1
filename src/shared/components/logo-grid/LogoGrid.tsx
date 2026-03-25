@@ -1,10 +1,10 @@
 import { Toolbar } from "../../../layout";
 import { SvgContent, useLogoModal, LogoModal, LogoCard, useLogos, useLogoGrid, Pagination, type LogoGridProps } from "../../index";
 
-export const LogoGrid = ({ label, containerClass, emptyMessage, category, onlyFavorites = false,
-}: LogoGridProps) => {
-  const { data: logos = [], isLoading, isFetching, error } = useLogos();
+export const LogoGrid = ({ label, headerIcon, containerClass, emptyMessage, category, onlyFavorites = false}: LogoGridProps) => {
 
+  const { data: logos = [], isLoading, isFetching, error } = useLogos();
+  
   const {
     query,
     setQuery,
@@ -33,7 +33,7 @@ export const LogoGrid = ({ label, containerClass, emptyMessage, category, onlyFa
   return (
     <div className={containerClass}>
       <Toolbar query={query} onSearch={setQuery} label={category} />
-      <SvgContent count={filteredLogos.length} label={label} emptyMessage={emptyMessage}>
+      <SvgContent count={filteredLogos.length} label={label} emptyMessage={emptyMessage} headerIcon={headerIcon}>
         {isLoading && <p>Loading...</p>}
         <ul className={`logo__grid ${isFetching ? "is-fetching" : ""}`}>
           {paginatedLogos.map((logo) => (

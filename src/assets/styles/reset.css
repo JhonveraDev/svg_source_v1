@@ -24,6 +24,7 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 
 /* Base body styles */

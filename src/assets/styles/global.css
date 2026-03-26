@@ -876,7 +876,7 @@
   }
 }
 
-/* ===== API Reference ===== */
+/* ===== API Reference Page ===== */
 .api-docs__content {
   display: grid;
   grid-template-columns: 1fr 242px;
@@ -948,4 +948,9 @@
 .api-docs__nav li {
   padding-bottom: calc(.25rem * 1.5);
   padding-top: calc(.25rem * 1);
+}
+
+/* ===== Extensions Page ===== */
+.extensions__grid {
+  background-color: red;
 }

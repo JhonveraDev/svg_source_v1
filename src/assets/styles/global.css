@@ -903,9 +903,12 @@
   margin-bottom: calc(.25rem * 3);
   font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: -0.01em;
   padding-bottom: calc(.25rem * 1.5);
   line-height: calc(2 / 1.5);
+}
+
+[id] {
+  scroll-margin-top: 1.5rem;
 }
 
 .api-docs__main h2:nth-child(1) {
@@ -923,4 +926,26 @@
 .api-docs__nav {
   position: sticky;
   top: 2rem;
+  font-weight: 500;
+  font-size: .875rem;
+}
+
+.api-docs__nav span {
+  color: var(--color-neutral-50);
+}
+
+.api-docs__nav span:hover,
+.api-docs__nav a:hover {
+  color: var(--color-neutral-50);
+  cursor: pointer;
+}
+
+.api-docs__nav-sub {
+  padding-left: 1rem;
+  border-left: 1px solid var(--color-neutral-800);
+}
+
+.api-docs__nav li {
+  padding-bottom: calc(.25rem * 1.5);
+  padding-top: calc(.25rem * 1);
 }

@@ -120,29 +120,31 @@ export const ApiDocsPage = () => {
       headerIcon={
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="18"
-          height="18"
+          width={18}
+          height={18}
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth={1.5}
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide-icon lucide lucide-files"
+          className="lucide-icon lucide lucide-file-text"
         >
-          <path d="M15 2h-4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"></path>
-          <path d="M16.706 2.706A2.4 2.4 0 0 0 15 2v5a1 1 0 0 0 1 1h5a2.4 2.4 0 0 0-.706-1.706z"></path>
-          <path d="M5 7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h8a2 2 0 0 0 1.732-1"></path>
+          <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+          <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+          <path d="M10 9H8" />
+          <path d="M16 13H8" />
+          <path d="M16 17H8" />
         </svg>
       }
     >
       <div className="api-docs__content">
         <div className="api-docs__main">
-          <h2>Introduction</h2>
+          <h2 id="introduction">Introduction</h2>
           <p>SVGL API is a RESTFul API that allows you to get all the information of the SVGs that are in the repository.</p>
-          <h2>Limitations</h2>
+          <h2 id="limitations">Limitations</h2>
           <p>The API is currently open to everyone and does not require any authentication. However, to prevent abusive use of the API, there is a limit to the number of requests.</p>
-          <h2>Base URLs</h2>
+          <h2 id="base-urls">Base URLs</h2>
           <p>SVGs URL:</p>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {svgUrl}
@@ -151,34 +153,34 @@ export const ApiDocsPage = () => {
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {categoriesURl}
           </SyntaxHighlighter>
-          <h2>Typescript</h2>
+          <h2 id="typescript">Typescript</h2>
           <p>You can use the following types for the SVG responses:</p>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {typescript}
           </SyntaxHighlighter>
-          <h2>Endpoints</h2>
-          <h3>Get all SVGs</h3>
+          <h2 id="endpoints">Endpoints</h2>
+          <h3 id="get-all-svgs">Get all SVGs</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getAll}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getAllElements}
           </SyntaxHighlighter>
-          <h3>Get all SVGs with limit</h3>
+          <h3 id="get-svgs-limit">Get all SVGs with limit</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getAllWithLimit}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getAllElementsWithLimit}
           </SyntaxHighlighter>
-          <h3>Get SVGs by category</h3>
+          <h3 id="get-svgs-category">Get SVGs by category</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getByCategory}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getByCategoryElements}
           </SyntaxHighlighter>
-          <h3>Get the SVG code</h3>
+          <h3 id="get-svg-code">Get the SVG code</h3>
           <p>Optimized SVG using svgo:</p>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {optimized}
@@ -190,14 +192,14 @@ export const ApiDocsPage = () => {
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {noOtimizedElements}
           </SyntaxHighlighter>
-          <h3>Search SVG by title</h3>
+          <h3 id="search-svg">Search SVG by title</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {searchTitle}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {searchTitleElements}
           </SyntaxHighlighter>
-          <h3>Get the list of categories</h3>
+          <h3 id="categories-list">Get the list of categories</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {listCategories}
           </SyntaxHighlighter>
@@ -205,23 +207,27 @@ export const ApiDocsPage = () => {
             {listCategoriesElements}
           </SyntaxHighlighter>
         </div>
-        <div className="api-docs__sidebar">
+
+        <nav className="api-docs__sidebar">
           <ul className="api-docs__nav">
-            <li>Introduction</li>
-            <li>Limitations</li>
-            <li>Bases URLs</li>
-            <li>Typescript</li>
-            <li>Endpoints</li>
-            <ul>
-              <li>Ges All SVGs</li>
-              <li>Get all SVGs with limit</li>
-              <li>Get SVGs by category</li>
-              <li>Get the SVG code</li>
-              <li>Search SVG by title</li>
-              <li>Get the list of categories</li>
-            </ul>
+            <span>On this page</span>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#limitations">Limitations</a></li>
+            <li><a href="#base-urls">Base URLs</a></li>
+            <li><a href="#typescript">Typescript</a></li>
+            <li><a href="#endpoints">Endpoint</a></li>
+            <li className="">
+              <ul className="api-docs__nav-sub">
+                <li><a href="#get-all-svgs">Get All SVGs</a></li>
+                <li><a href="#get-svgs-limit">Get all SVGs with limit</a></li>
+                <li><a href="#get-svgs-category">Get SVGs by category</a></li>
+                <li><a href="#get-svg-code">Get the SVG code</a></li>
+                <li><a href="#search-svg">Search SVG by title</a></li>
+                <li><a href="#categories-list">Get the list of categories</a></li>
+              </ul>
+            </li>
           </ul>
-        </div>
+        </nav>
       </div>
     </SvgContent>
   );

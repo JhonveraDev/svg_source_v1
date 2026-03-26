@@ -142,15 +142,12 @@ export const ApiDocsPage = () => {
           <p>SVGL API is a RESTFul API that allows you to get all the information of the SVGs that are in the repository.</p>
           <h2>Limitations</h2>
           <p>The API is currently open to everyone and does not require any authentication. However, to prevent abusive use of the API, there is a limit to the number of requests.</p>
-          <blockquote>
-            <p>Don't use the API for create the same product as SVGL. The API is intended to be used for extensions, plugins, or other tools that can help the community.</p>
-          </blockquote>
           <h2>Base URLs</h2>
-          <h3>SVGs URL:</h3>
+          <p>SVGs URL:</p>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {svgUrl}
           </SyntaxHighlighter>
-          <h2>Categories URL:</h2>
+          <p>Categories URL:</p>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {categoriesURl}
           </SyntaxHighlighter>
@@ -167,40 +164,40 @@ export const ApiDocsPage = () => {
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getAllElements}
           </SyntaxHighlighter>
-          <h2>Get all SVGs with limit</h2>
+          <h3>Get all SVGs with limit</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getAllWithLimit}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getAllElementsWithLimit}
           </SyntaxHighlighter>
-          <h2>Get SVGs by category</h2>
+          <h3>Get SVGs by category</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getByCategory}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {getByCategoryElements}
           </SyntaxHighlighter>
-          <h2>Get the SVG code</h2>
-          <h3>Optimized SVG using svgo:</h3>
+          <h3>Get the SVG code</h3>
+          <p>Optimized SVG using svgo:</p>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {optimized}
           </SyntaxHighlighter>
-          <h3>No optimized SVG:</h3>
+          <p>No optimized SVG:</p>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {noOtimized}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {noOtimizedElements}
           </SyntaxHighlighter>
-          <h2>Search SVG by title</h2>
+          <h3>Search SVG by title</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {searchTitle}
           </SyntaxHighlighter>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {searchTitleElements}
           </SyntaxHighlighter>
-          <h2>Get the list of categories</h2>
+          <h3>Get the list of categories</h3>
           <SyntaxHighlighter language="typescript" style={nightOwl} showLineNumbers wrapLongLines>
             {listCategories}
           </SyntaxHighlighter>

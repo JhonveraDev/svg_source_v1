@@ -1,4 +1,4 @@
-import { HomeIcon, FavoritesIcon, ApiIcon, ShadcnIcon, ExtensionsIcon } from "./sidebarIcons";
+import { HomeIcon, FavoritesIcon, ApiIcon, ExtensionsIcon } from "./sidebarIcons";
 import type { SidebarLink } from "./index";
 
 export const sidebarLinks: SidebarLink[] = [

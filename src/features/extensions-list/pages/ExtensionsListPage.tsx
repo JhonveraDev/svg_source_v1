@@ -1,6 +1,117 @@
 import { SvgContent } from "../../../shared";
 import { Link } from "react-router-dom";
 
+const data = [
+  {
+    "id": 1,
+    "title": "SVGL CLI",
+    "description": "A CLI for easily adding SVG icons to your project.",
+    "img": "https://raw.githubusercontent.com/pheralb/svgl/refs/heads/main/static/images/svgl_svg.svg",
+    "author": "sujiieee",
+    "framework": "cli",
+    "buttonText": "Install"
+  },
+  {
+    "id": 2,
+    "title": "SVGL for React",
+    "description": "An open-source NPM package that offers a SVGL Logos for React.",
+    "img": "https://raw.githubusercontent.com/pheralb/svgl/refs/heads/main/static/library/react_light.svg",
+    "author": "ridemountainpig",
+    "framework": "react",
+    "buttonText": "Install"
+  },
+  {
+    "id": 3,
+    "title": "SVGL for Framer",
+    "description": "Import colorful SVG logos, fast and easy using our plugin for Framer.",
+    "img": "https://raw.githubusercontent.com/pheralb/svgl/refs/heads/main/static/library/framer.svg",
+    "author": "Krishna Singh",
+    "framework": "framer",
+    "buttonText": "Install"
+  },
+  {
+    "id": 4,
+    "title": "SVGL for Vue",
+    "description": "An open-source NPM package that offers a SVGL Logos for Vue.",
+    "img": "https://raw.githubusercontent.com/pheralb/svgl/refs/heads/main/static/library/vue.svg",
+    "author": "selemonddev",
+    "framework": "vue",
+    "buttonText": "Install"
+  },
+  {
+    "id": 5,
+    "title": "SVGL for Svelte",
+    "description": "An open-source NPM package that offers a SVGL Logos for Svelte.",
+    "img": "https://github.com/pheralb/svgl/raw/main/static/library/svelte.svg",
+    "author": "selemonddev",
+    "framework": "svelte",
+    "buttonText": "Install"
+  },
+  {
+    "id": 6,
+    "title": "SVGL for Figma",
+    "description": "Add svgs from svgl to your Figma project.",
+    "img": "https://github.com/pheralb/svgl/raw/main/static/library/figma.svg",
+    "author": "quilljou",
+    "framework": "figma",
+    "buttonText": "Install"
+  },
+  {
+    "id": 7,
+    "title": "SVGL for PowerToys",
+    "description": "Search & copy SVG logos in PowerToys Run.",
+    "img": "https://github.com/pheralb/svgl/raw/main/static/library/powertoys.svg",
+    "author": "SameerJS6",
+    "framework": "powertoys",
+    "buttonText": "Install"
+  },
+  {
+    "id": 8,
+    "title": "SVGL for Raycast",
+    "description": "Search SVG logos via svgl.",
+    "img": "https://github.com/pheralb/svgl/raw/main/static/library/raycast.svg",
+    "author": "1weiho",
+    "framework": "raycast",
+    "buttonText": "Install"
+  },
+  {
+    "id": 9,
+    "title": "SVGL for Visual Studio Code",
+    "description": "SVGL directly in your VSCode.",
+    "img": "https://github.com/pheralb/svgl/raw/main/static/library/vscode.svg",
+    "author": "girlazote",
+    "framework": "vscode",
+    "buttonText": "Install"
+  },
+  {
+    "id": 10,
+    "title": "SVGL for Flow Launcher",
+    "description": "Search & copy SVG logos in Flow Launcher.",
+    "img": "https://github.com/pheralb/svgl/raw/main/static/library/FlowLauncher.svg",
+    "author": "AF_Askar",
+    "framework": "badge",
+    "buttonText": "Install"
+  },
+  {
+    "id": 11,
+    "title": "SVGL on Magic by 21st",
+    "description": "Integrate company logos and icons via SVGL on Magic.",
+    "img": "https://github.com/serafimcloud/21st/raw/main/apps/web/public/icon.png?raw=true",
+    "author": "serafimcloud",
+    "framework": "magic",
+    "buttonText": "Install"
+  },
+  {
+    "id": 12,
+    "title": "SVGL for PowerShell",
+    "description": "PowerShell extension to quickly get svgl logos anywhere.",
+    "img": "https://github.com/pheralb/svgl/raw/main/static/library/powershell.svg",
+    "author": "Bart Spaans",
+    "framework": "powershell",
+    "buttonText": "Install"
+  }
+]
+
 const PackageOpenIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +136,7 @@ export const ExtensionsListPage = () => {
   return (
     <SvgContent
       label="Extensions"
-      containerClass="extensions__grid"
+      containerClass="api__grid"
       headerIcon={PackageOpenIcon}
     >
       <section className="extensions">
@@ -34,36 +145,47 @@ export const ExtensionsListPage = () => {
           <p className="extensions__description">
             Integrate SVGL with your favorite tools and apps to streamline your workflow. Created by the community.
           </p>
-          <Link to="/docs/api" className="extensions__link">
-            Start Building
-          </Link>
+          <div>
+            <Link to="/docs/api" className="extensions__link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide-icon lucide lucide-rocket"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path></svg>
+              Start Building
+            </Link>
+          </div>
         </div>
 
         <div className="extensions__list">
-          <div className="extensions__card">
+          {data.map((item) => (
+            <div className="extensions__card" key={item.id}>
 
-            <div className="extensions__card-header">
-              <img className="extensions__card-image" src="" alt="" />
-              <a className="extensions__card-action" href="">Install</a>
+              <div className="extensions__card-header">
+                <img
+                  className="extensions__card-image"
+                  src={item.img || ""}
+                  alt={item.title}
+                />
+                <a className="extensions__card-action" href="#">
+                  {item.buttonText}
+                </a>
+              </div>
+
+              <div className="extensions__card-body">
+                <h4 className="extensions__card-title">{item.title}</h4>
+                <p className="extensions__card-text">
+                  {item.description}
+                </p>
+              </div>
+
+              <div className="extensions__card-footer">
+                <span className="extensions__card-author-label">
+                  Created by
+                </span>
+                <a className="extensions__card-author" href="#">
+                  {item.author}
+                </a>
+              </div>
+
             </div>
-
-            <div className="extensions__card-body">
-              <h4 className="extensions__card-title">SVGL CLI</h4>
-              <p className="extensions__card-text">
-                A CLI for easily adding SVG icons to your project.
-              </p>
-            </div>
-
-            <div className="extensions__card-footer">
-              <span className="extensions__card-author-label">
-                Created By
-              </span>
-              <a className="extensions__card-author" href="">
-                Sujee
-              </a>
-            </div>
-
-          </div>
+          ))}
         </div>
       </section>
     </SvgContent>
